@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kafira — Ingeniería Electrónica | Sucre, Bolivia</title>
+  <meta name="description" content="Portafolio de Esther Kafira Guarachi Gomez, Ingeniería Electrónica especializada en sistemas embebidos, automatización y bioseñales. Sucre, Bolivia.">
+
+  <!-- Preconnect para velocidad de carga de fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <!-- ─── Navegación ─────────────────────────────────────────────────── -->
+  <nav id="nav" role="navigation" aria-label="Navegación principal">
+    <span class="brand">kafy17</span>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul id="nav-menu">
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#astronomia">Astronomía</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- ─── Hero ──────────────────────────────────────────────────────── -->
+  <header class="hero" id="inicio">
+
+    <!-- Orión: asterismo real (no inventado), con la nebulosa de Orión (M42)
+         apenas visible bajo el cinturón, como se ve a simple vista, no como
+         foto astronómica procesada. Elemento decorativo, no informativo. -->
+    <svg class="hero-orion" viewBox="0 0 400 520" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+      <defs>
+        <radialGradient id="nebula-glow" cx="50%" cy="50%" r="50%">
+          <stop class="nebula-stop-a" offset="0%" stop-opacity="0.14"/>
+          <stop class="nebula-stop-b" offset="100%" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <circle class="orion-nebula" cx="200" cy="330" r="70" fill="url(#nebula-glow)"/>
+      <g class="orion-lines" fill="none">
+        <line x1="272" y1="60"  x2="120" y2="75"/>
+        <line x1="272" y1="60"  x2="248" y2="215"/>
+        <line x1="120" y1="75"  x2="152" y2="195"/>
+        <line x1="152" y1="195" x2="200" y2="205"/>
+        <line x1="200" y1="205" x2="248" y2="215"/>
+        <line x1="152" y1="195" x2="112" y2="365"/>
+        <line x1="248" y1="215" x2="264" y2="360"/>
+        <line x1="112" y1="365" x2="264" y2="360"/>
+        <line x1="200" y1="205" x2="200" y2="300"/>
+      </g>
+      <g class="orion-stars">
+        <circle cx="272" cy="60"  r="2.6"/>
+        <circle cx="120" cy="75"  r="2.2"/>
+        <circle cx="152" cy="195" r="1.8"/>
+        <circle cx="200" cy="205" r="1.8"/>
+        <circle cx="248" cy="215" r="1.8"/>
+        <circle cx="112" cy="365" r="2.4"/>
+        <circle cx="264" cy="360" r="2.2"/>
+        <circle cx="200" cy="300" r="1.1" fill-opacity="0.55"/>
+      </g>
+    </svg>
+
+    <div class="hero-content" data-animate>
+
+      <!-- Columna izquierda: texto -->
+      <div class="hero-text">
+        <div class="eyebrow">Sucre, Bolivia</div>
+        <h1>Esther Kafira<br><em>Guarachi Gomez</em></h1>
+        <div class="role">Ingeniería Electrónica</div>
+        <div class="hero-tags">
+          <span class="tag">Sistemas Embebidos</span>
+          <span class="tag">Automatización</span>
+          <span class="tag">Bioseñales</span>
+        </div>
+      </div>
+
+      <!-- Columna derecha: foto sin marco circular, en duotono del tema -->
+      <div class="hero-photo-wrap">
+        <div class="hero-photo">
+          <img src="profile_photo.jpg"
+               width="300" height="360"
+               alt="Foto de Kafira"
+               onerror="this.parentElement.classList.add('hero-photo--empty')">
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ─── Sobre mí ───────────────────────────────────────────────────── -->
+  <section id="sobre-mi" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">01 / Sobre mí</div>
+        <h2>Kafira</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            Soy Kafira, estudiante de Ingeniería Electrónica en la USFX, a un paso de graduarme.
+            Trabajo sobre todo con sistemas embebidos, automatización y, cada vez más, con
+            bioseñales — me interesa cómo un cuerpo o una máquina generan datos y qué se puede
+            hacer con ellos. Prefiero los proyectos que terminan funcionando de verdad, aunque
+            tomen más tiempo del planeado.
+          </p>
+          <p>
+            Fuera del laboratorio ayudo a organizar el Club de Astronomía de la universidad —
+            observación, procesamiento de imágenes y eventos de divulgación abiertos a la
+            comunidad de Sucre.
+          </p>
+
+          <div class="highlights">
+            <div class="highlight-item">
+              <div class="highlight-icon">◈</div>
+              <div>
+                <strong>Aspire Leaders Program</strong>
+                <span>Harvard Leadership Institute</span>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon">◈</div>
+              <div>
+                <strong>Equipo USFX de detección de asteroides</strong>
+                <span>Reconocido por la NASA / ABASC</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-aside">
+          <div class="stat-card">
+            <div class="stat-number">6</div>
+            <div class="stat-label">Proyectos entre hardware y software</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Idiomas (+ Quechua básico)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Proyectos destacados ──────────────────────────────────────── -->
+  <section id="proyectos" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">02 / Proyectos</div>
+        <h2>Lo que he construido</h2>
+      </div>
+
+      <!-- Tarjetas completas -->
+      <div class="projects-grid">
+
+        <article class="project-card project-card--featured" data-animate>
+          <div class="project-meta">
+            <span class="project-badge">Pasantía · Elegant Gift</span>
+            <span class="project-type">Full-Stack + Hardware</span>
+          </div>
+          <h3>Sistema de gestión para gimnasio con NFC</h3>
+          <p>Aplicación completa de gestión de membresías con control de acceso por tarjetas NFC.
+            Incluye backend con API REST, base de datos relacional, dashboard en tiempo real vía
+            Socket.io y consola SCADA de monitoreo construida en Electron.</p>
+          <div class="project-stack">
+            <span>React</span><span>Node.js</span><span>Express</span>
+            <span>Prisma</span><span>NFC / PC-SC</span><span>Socket.io</span><span>Electron</span>
+          </div>
+        </article>
+
+        <article class="project-card" data-animate>
+          <div class="project-meta">
+            <span class="project-type">IoT · Cloud</span>
+          </div>
+          <h3>Sistema de monitoreo con ESP32 y Firebase</h3>
+          <p>Sensor embebido que publica datos en tiempo real a Firebase. Visualización en
+            dashboard web con actualización en vivo, pensado para entornos de control remoto.</p>
+          <div class="project-stack">
+            <span>ESP32</span><span>Firebase</span><span>C++</span>
+          </div>
+        </article>
+
+        <article class="project-card" data-animate>
+          <div class="project-meta">
+            <span class="project-type">Automatización · PLC</span>
+          </div>
+          <h3>Dispensador automático para pollos</h3>
+          <p>Sistema de control programado en OpenPLC que dosifica alimento según horario y
+            peso, reduciendo desperdicio y trabajo manual en granja.</p>
+          <div class="project-stack">
+            <span>OpenPLC</span><span>Ladder</span><span>HMI</span>
+          </div>
+        </article>
+
+        <article class="project-card" data-animate>
+          <div class="project-meta">
+            <span class="project-type">Embebidos · Control</span>
+          </div>
+          <h3>Incubadora automatizada para huevos</h3>
+          <p>Control de temperatura y humedad para incubación. El sistema de calentamiento tuvo
+            limitaciones reales — un aprendizaje que formó parte del proceso tanto como los
+            aciertos.</p>
+          <div class="project-stack">
+            <span>Arduino</span><span>DHT22</span><span>PID</span>
+          </div>
+        </article>
+
+        <article class="project-card" data-animate>
+          <div class="project-meta">
+            <span class="project-type">Robótica · Comunicación</span>
+          </div>
+          <h3>Auto dual-ESP32 con control remoto</h3>
+          <p>Vehículo controlado inalámbricamente con dos ESP32 comunicados por Bluetooth Classic.
+            Diseño de PCB personalizado y chasis impreso en 3D.</p>
+          <div class="project-stack">
+            <span>ESP32</span><span>Bluetooth Classic</span><span>PCB</span><span>3D Print</span>
+          </div>
+        </article>
+
+        <article class="project-card" data-animate>
+          <div class="project-meta">
+            <span class="project-type">Astronomía · Visualización</span>
+          </div>
+          <h3>Domo astronómico + shader OBS</h3>
+          <p>Proyección de cielo en cúpula con shader personalizado para OBS. Herramienta usada
+            en eventos del club para divulgación científica en formato inmersivo.</p>
+          <div class="project-stack">
+            <span>GLSL Shader</span><span>OBS</span><span>Geometría esférica</span>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Menciones breves -->
+      <div class="mentions-section">
+        <h3 class="mentions-title">También vale la pena mencionar</h3>
+        <div class="mentions-grid">
+          <div class="mention-item">
+            <strong>Electroestimulador muscular (Arduino)</strong>
+            <p>Prototipo experimental. Sin validación biomédica formal — hecho para
+              entender los principios, no para uso clínico.</p>
+          </div>
+          <div class="mention-item">
+            <strong>Commit Guardian</strong>
+            <p>Herramienta multi-agente para revisión de commits. Construida con
+              Google ADK y la API de Gemini.</p>
+          </div>
+          <div class="mention-item">
+            <strong>BCI / Interfaz cerebro-computadora</strong>
+            <p>Dirección futura en desarrollo activo. Bioseñales como interfaz —
+              trabajo en progreso, no un logro terminado.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Galería compacta -->
+      <div class="gallery-section">
+        <h3 class="gallery-title">Galería de otros proyectos</h3>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <div class="gallery-thumb gallery-thumb--placeholder"></div>
+            <span>Viga-bola con control PID</span>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-thumb gallery-thumb--placeholder"></div>
+            <span>Robot 3 GDL (MATLAB)</span>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-thumb gallery-thumb--placeholder"></div>
+            <span>Convertidores Boost</span>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-thumb gallery-thumb--placeholder"></div>
+            <span>Auto velocista</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── Astronomía ────────────────────────────────────────────────── -->
+  <section id="astronomia" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">03 / Astronomía</div>
+        <h2>Club de Astronomía USFX</h2>
+      </div>
+      <p class="section-intro">
+        Iniciativa que ayudé a desarrollar dentro del Departamento de Física USFX: observaciones
+        solares y nocturnas, procesamiento de imágenes y eventos de divulgación abiertos a la
+        comunidad. Las fotografías del cielo son propias — tomadas con celular y procesadas en
+        Lightroom, salvo Saturno, captado con la cámara astronómica Orion StarShoot 5MP del club
+        y procesado con PIPP, AutoStakkert y RegiStax.
+      </p>
+
+      <div class="astro-stats">
+        <span class="astro-stat-inline">Asistentes en un evento <strong>+300</strong></span>
+        <span class="astro-stat-inline">Activos desde <strong>2023</strong></span>
+      </div>
+
+      <p class="astro-note">
+        ◈ &nbsp;Parte del equipo USFX de detección de asteroides, reconocido por la
+        <strong>NASA</strong> y el Grupo Boliviano de Asteroides (ABASC).
+      </p>
+
+      <div class="lightbox-grid" id="astro-gallery" role="list" aria-label="Galería del club de astronomía">
+
+        <div class="lb-thumb" role="listitem" tabindex="0"
+             data-src="img/astronomia/foto-comunidad-campamento-astronomico-2023.webp"
+             data-caption="Comunidad de Chiracoro, Potosí, durante el campamento astronómico 2023. Actividad de divulgación organizada por el Departamento de Física USFX para acercar la astronomía a comunidades fuera de la ciudad."
+             data-label="Chiracoro, Potosí — 2023">
+          <img src="img/astronomia/foto-comunidad-campamento-astronomico-2023.webp"
+               alt="Comunidad de Chiracoro en campamento astronómico 2023" loading="lazy">
+          <div class="lb-hover-label"><span>Chiracoro, Potosí — 2023</span></div>
+        </div>
+
+        <div class="lb-thumb" role="listitem" tabindex="0"
+             data-src="img/astronomia/foto-potosi-campamento-astronomico-representantes-sucre.webp"
+             data-caption="Integrantes del Departamento de Física USFX en el campamento astronómico de Potosí, 2023. Representando a Sucre en este encuentro interuniversitario de astronomía."
+             data-label="Representantes USFX en Potosí">
+          <img src="img/astronomia/foto-potosi-campamento-astronomico-representantes-sucre.webp"
+               alt="Representantes del Depto. de Física USFX en campamento de Potosí" loading="lazy">
+          <div class="lb-hover-label"><span>Representantes USFX en Potosí</span></div>
+        </div>
+
+        <div class="lb-thumb" role="listitem" tabindex="0"
+             data-src="img/astronomia/foto-luna-inflable-ings.webp"
+             data-caption="Docentes del Departamento de Física USFX junto a la luna inflable del Club Galileo de Potosí, en la Feria de Física universitaria. La feria se realiza cada semestre y es abierta a la comunidad."
+             data-label="Feria de Física — luna inflable">
+          <img src="img/astronomia/foto-luna-inflable-ings.webp"
+               alt="Docentes con luna inflable del Club Galileo de Potosí en la Feria de Física" loading="lazy">
+          <div class="lb-hover-label"><span>Feria de Física — luna inflable</span></div>
+        </div>
+
+        <div class="lb-thumb" role="listitem" tabindex="0"
+             data-src="img/astronomia/foto-brazo-via-lactea-by-kafy17.webp"
+             data-caption="Brazo de la Vía Láctea fotografiado desde Sucre con celular y procesado en Lightroom. Fotografía: kafy17."
+             data-label="Vía Láctea — kafy17">
+          <img src="img/astronomia/foto-brazo-via-lactea-by-kafy17.webp"
+               alt="Brazo de la Vía Láctea — fotografía de kafy17" loading="lazy">
+          <div class="lb-hover-label"><span>Vía Láctea — kafy17</span></div>
+        </div>
+
+        <div class="lb-thumb" role="listitem" tabindex="0"
+             data-src="img/astronomia/foto-nube-magallanes-by-kafy17.webp"
+             data-caption="Nubes de Magallanes — galaxias satélites de la Vía Láctea, visibles a simple vista desde el hemisferio sur. Fotografiadas con celular desde Sucre y procesadas en Lightroom. Fotografía: kafy17."
+             data-label="Nubes de Magallanes — kafy17">
+          <img src="img/astronomia/foto-nube-magallanes-by-kafy17.webp"
+               alt="Nubes de Magallanes — fotografía de kafy17" loading="lazy">
+          <div class="lb-hover-label"><span>Nubes de Magallanes — kafy17</span></div>
+        </div>
+
+        <div class="lb-thumb" role="listitem" tabindex="0"
+             data-src="img/astronomia/foto-jupiter-by-kafy17.webp"
+             data-caption="Júpiter fotografiado desde Sucre con celular y procesado en Lightroom. Fotografía: kafy17."
+             data-label="Júpiter — kafy17">
+          <img src="img/astronomia/foto-jupiter-by-kafy17.webp"
+               alt="Júpiter — fotografía de kafy17" loading="lazy">
+          <div class="lb-hover-label"><span>Júpiter — kafy17</span></div>
+        </div>
+
+        <div class="lb-thumb" role="listitem" tabindex="0"
+             data-src="img/astronomia/foto-saturno-by-kafy17.webp"
+             data-caption="Saturno capturado con la cámara astronómica Orion StarShoot 5MP del club y procesado con PIPP, AutoStakkert y RegiStax. La única foto de la galería tomada con equipo especializado. Fotografía: kafy17."
+             data-label="Saturno — kafy17">
+          <img src="img/astronomia/foto-saturno-by-kafy17.webp"
+               alt="Saturno — fotografía de kafy17" loading="lazy">
+          <div class="lb-hover-label"><span>Saturno — kafy17</span></div>
+        </div>
+
+        <div class="lb-thumb" role="listitem" tabindex="0"
+             data-src="img/astronomia/foto-venus-by-kafy17.webp"
+             data-caption="Venus en fase creciente, fotografiado con celular desde Sucre y procesado en Lightroom. Las fases de Venus — análogas a las lunares — son observables con telescopios de apertura moderada. Fotografía: kafy17."
+             data-label="Venus — kafy17">
+          <img src="img/astronomia/foto-venus-by-kafy17.webp"
+               alt="Venus — fotografía de kafy17" loading="lazy">
+          <div class="lb-hover-label"><span>Venus — kafy17</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Habilidades ───────────────────────────────────────────────── -->
+  <section id="habilidades" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">04 / Habilidades</div>
+        <h2>Stack técnico</h2>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-group">
+          <h4>Embebidos &amp; Electrónica</h4>
+          <ul>
+            <li>ESP32 / Arduino</li>
+            <li>Diseño de PCB</li>
+            <li>Bioseñales (EMG, EEG)</li>
+            <li>Impresión 3D</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <h4>Automatización &amp; PLC</h4>
+          <ul>
+            <li>OpenPLC / Ladder</li>
+            <li>Control PID</li>
+            <li>SCADA / HMI</li>
+            <li>MATLAB / Simulink</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <h4>Software &amp; Full-Stack</h4>
+          <ul>
+            <li>Python · C++ · SQL</li>
+            <li>React · Node.js · Express</li>
+            <li>Prisma · Firebase</li>
+            <li>Socket.io · Electron</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <h4>Cloud &amp; IA (en progreso)</h4>
+          <ul>
+            <li>AWS Cloud Practitioner Essentials</li>
+            <li>Google ADK · Gemini API</li>
+            <li>Build with AI Sucre 2026</li>
+            <li>AI Learning Lab (Google)</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Certificaciones destacadas -->
+      <div class="certs-section">
+        <h3 class="certs-title">Certificaciones</h3>
+        <ul class="certs-list">
+          <li>
+            <span class="cert-issuer">AWS</span>
+            <span class="cert-name">Cloud Practitioner Essentials</span>
+            <span class="cert-note">curso completado — examen oficial en septiembre 2026</span>
+          </li>
+          <li>
+            <span class="cert-issuer">Google</span>
+            <span class="cert-name">Build with AI Sucre 2026</span>
+          </li>
+          <li>
+            <span class="cert-issuer">Google</span>
+            <span class="cert-name">AI Learning Lab</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Idiomas -->
+      <div class="languages-section">
+        <h3 class="languages-title">Idiomas</h3>
+        <ul class="languages-list">
+          <li><span class="lang-name">Español</span><span class="lang-level">Nativo</span></li>
+          <li><span class="lang-name">Inglés</span><span class="lang-level">B2 · facultad</span></li>
+          <li><span class="lang-name">Alemán</span><span class="lang-level">B2 · Goethe-Zertifikat</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── Contacto / CV ─────────────────────────────────────────────── -->
+  <section id="contacto" class="section section-contact">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <div class="section-label">05 / Contacto</div>
+        <h2>Hablemos</h2>
+        <p class="contact-intro">
+          Si nos cruzamos en el AWS Community Day Bolivia, o quieres hablar de hardware,
+          sistemas embebidos o astronomía, aquí me encuentras.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+
+        <a href="mailto:kafiguarachi@gmail.com" class="contact-link" id="contact-email">
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <polyline points="2,4 12,13 22,4"/>
+            </svg>
+          </span>
+          <div class="contact-text">
+            <strong>Email</strong>
+            <span>kafiguarachi@gmail.com</span>
+          </div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/esther-kafira-guarachi-gomez-289892150/" class="contact-link" id="contact-linkedin" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.72 3.99997H5.37C5.19793 3.99191 5.02595 4.01786 4.86392 4.07635C4.70189 4.13484 4.55299 4.22471 4.42573 4.34081C4.29848 4.45692 4.19537 4.59699 4.12232 4.75299C4.04927 4.909 4.0077 5.07788 4 5.24997V18.63C4.01008 18.9901 4.15766 19.3328 4.41243 19.5875C4.6672 19.8423 5.00984 19.9899 5.37 20H18.72C19.0701 19.9844 19.4002 19.8322 19.6395 19.5761C19.8788 19.32 20.0082 18.9804 20 18.63V5.24997C20.0029 5.08247 19.9715 4.91616 19.9078 4.76122C19.8441 4.60629 19.7494 4.466 19.6295 4.34895C19.5097 4.23191 19.3672 4.14059 19.2108 4.08058C19.0544 4.02057 18.8874 3.99314 18.72 3.99997ZM9 17.34H6.67V10.21H9V17.34ZM7.89 9.12997C7.72741 9.13564 7.5654 9.10762 7.41416 9.04768C7.26291 8.98774 7.12569 8.89717 7.01113 8.78166C6.89656 8.66615 6.80711 8.5282 6.74841 8.37647C6.6897 8.22474 6.66301 8.06251 6.67 7.89997C6.66281 7.73567 6.69004 7.57169 6.74995 7.41854C6.80986 7.26538 6.90112 7.12644 7.01787 7.01063C7.13463 6.89481 7.2743 6.80468 7.42793 6.74602C7.58157 6.68735 7.74577 6.66145 7.91 6.66997C8.07259 6.66431 8.2346 6.69232 8.38584 6.75226C8.53709 6.8122 8.67431 6.90277 8.78887 7.01828C8.90344 7.13379 8.99289 7.27174 9.05159 7.42347C9.1103 7.5752 9.13699 7.73743 9.13 7.89997C9.13719 8.06427 9.10996 8.22825 9.05005 8.3814C8.99014 8.53456 8.89888 8.6735 8.78213 8.78931C8.66537 8.90513 8.5257 8.99526 8.37207 9.05392C8.21843 9.11259 8.05423 9.13849 7.89 9.12997ZM17.34 17.34H15V13.44C15 12.51 14.67 11.87 13.84 11.87C13.5822 11.8722 13.3313 11.9541 13.1219 12.1045C12.9124 12.2549 12.7546 12.4664 12.67 12.71C12.605 12.8926 12.5778 13.0865 12.59 13.28V17.34H10.29V10.21H12.59V11.21C12.7945 10.8343 13.0988 10.5225 13.4694 10.3089C13.84 10.0954 14.2624 9.98848 14.69 9.99997C16.2 9.99997 17.34 11 17.34 13.13V17.34Z"/>
+            </svg>
+          </span>
+          <div class="contact-text">
+            <strong>LinkedIn</strong>
+            <span class="contact-name">Esther Kafira Guarachi Gomez</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/kafi17" class="contact-link" id="contact-github" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="currentColor">
+              <path d="M10,0.408 C4.478,0.408 0,4.886 0,10.408 C0,14.837 2.862,18.679 6.833,20.036 C7.326,20.137 7.506,19.817 7.506,19.544 C7.506,19.206 7.494,18.102 7.494,16.73 C7.494,16.73 4.738,17.334 4.168,15.486 C4.168,15.486 3.726,14.324 3.083,14.027 C3.083,14.027 2.099,13.351 3.152,13.364 C3.152,13.364 4.224,13.454 4.813,14.487 C5.738,16.092 7.277,15.63 7.52,15.356 C7.616,14.677 7.891,14.215 8.194,13.951 C6.143,13.716 4.067,13.124 4.067,9.768 C4.067,8.784 4.407,7.974 4.987,7.34 C4.884,7.081 4.541,6.038 5.086,4.626 C5.086,4.626 5.924,4.351 7.506,5.677 C8.172,5.491 8.879,5.396 9.586,5.392 C10.293,5.396 11,5.491 11.668,5.677 C13.25,4.342 14.088,4.626 14.088,4.626 C14.633,6.038 14.29,7.081 14.187,7.34 C14.769,7.974 15.107,8.775 15.107,9.768 C15.107,13.133 13.025,13.713 10.967,13.943 C11.339,14.237 11.666,14.808 11.666,15.704 C11.666,16.989 11.654,18.302 11.654,18.544 C11.654,18.76 11.838,19.077 12.337,18.982 C16.308,17.627 19.173,13.783 19.173,10.408 C19.173,4.886 14.695,0.408 10,0.408"/>
+            </svg>
+          </span>
+          <div class="contact-text">
+            <strong>GitHub</strong>
+            <span>github.com/kafi17</span>
+          </div>
+        </a>
+
+        <a href="https://youtube.com/@kafy17" class="contact-link" id="contact-youtube" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 -3 20 20" fill="currentColor">
+              <path d="M7.988,7.586 L7.988,1.974 C9.98,2.912 11.523,3.817 13.348,4.793 C11.843,5.628 9.98,6.565 7.988,7.586 M19.091,-0.817 C18.747,-1.27 18.162,-1.622 17.538,-1.739 C15.705,-2.087 4.271,-2.088 2.439,-1.739 C1.939,-1.645 1.494,-1.419 1.111,-1.067 C-0.5,0.429 0.005,8.452 0.393,9.751 C0.557,10.313 0.768,10.719 1.034,10.986 C1.376,11.338 1.845,11.58 2.384,11.689 C3.893,12.001 11.668,12.175 17.506,11.735 C18.044,11.642 18.52,11.391 18.896,11.024 C20.386,9.535 20.284,1.062 19.091,-0.817"/>
+            </svg>
+          </span>
+          <div class="contact-text">
+            <strong>YouTube</strong>
+            <span>@kafy17</span>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="cv-block">
+        <p>¿Prefieres el formato tradicional?</p>
+        <a href="#" class="btn-cv" id="btn-cv-download">
+          Descargar CV
+          <span class="btn-arrow">↓</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── Footer ────────────────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <span>© 2026 Esther Kafira Guarachi Gomez</span>
+      <span class="footer-sep">·</span>
+      <span>Sucre, Bolivia</span>
+    </div>
+  </footer>
+
+  <!-- ?v=3 fuerza que el navegador cargue la versión actualizada sin usar caché -->
+  <script src="script.js?v=3" defer></script>
+
+</body>
+</html>
