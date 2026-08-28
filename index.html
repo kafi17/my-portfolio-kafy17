@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 
@@ -96,6 +96,8 @@
     </div>
   </header>
 
+  <main>
+
   <!-- ─── Sobre mí ───────────────────────────────────────────────────── -->
   <section id="sobre-mi" class="section">
     <div class="container">
@@ -108,12 +110,16 @@
           <p>
             Soy Kafira, estudiante de Ingeniería Electrónica en la USFX, a un paso de graduarme.
             Trabajo sobre todo con sistemas embebidos, automatización y, cada vez más, con
-            bioseñales — me interesa cómo un cuerpo o una máquina generan datos y qué se puede
-            hacer con ellos. Prefiero los proyectos que terminan funcionando de verdad, aunque
-            tomen más tiempo del planeado.
+            bioseñales — me interesa cómo el cuerpo y la electrónica pueden trabajar juntos y
+            formar aplicaciones mucho más interesantes que pueden ayudar a las personas.
           </p>
           <p>
-            Fuera del laboratorio ayudo a organizar el Club de Astronomía de la universidad —
+            Me gustan los proyectos que combinan distintas áreas a la vez y permiten aprender temas nuevos en el proceso.
+            Muchas veces termino explorando herramientas o temas nuevos, fuera de mi área principal, justamente ahí es
+            donde se pueden encontrar inesperadamente las partes más interesantes de un proyecto.
+          </p>
+          <p>
+            Fuera de mis estudios me dedico a organizar el Observatorio Astronómico de la universidad —
             observación, procesamiento de imágenes y eventos de divulgación abiertos a la
             comunidad de Sucre.
           </p>
@@ -129,8 +135,8 @@
             <div class="highlight-item">
               <div class="highlight-icon">◈</div>
               <div>
-                <strong>Equipo USFX de detección de asteroides</strong>
-                <span>Reconocido por la NASA / ABASC</span>
+                <strong>Observatorio Astronómico USFX</strong>
+                <span>Departamento de Física USFX</span>
               </div>
             </div>
           </div>
@@ -143,7 +149,7 @@
           </div>
           <div class="stat-card">
             <div class="stat-number">3</div>
-            <div class="stat-label">Idiomas (+ Quechua básico)</div>
+            <div class="stat-label">Idiomas</div>
           </div>
         </div>
       </div>
@@ -162,64 +168,87 @@
       <div class="projects-grid">
 
         <article class="project-card project-card--featured" data-animate>
-          <div class="project-meta">
-            <span class="project-badge">Pasantía · Elegant Gift</span>
-            <span class="project-type">Full-Stack + Hardware</span>
-          </div>
-          <h3>Sistema de gestión para gimnasio con NFC</h3>
-          <p>Aplicación completa de gestión de membresías con control de acceso por tarjetas NFC.
-            Incluye backend con API REST, base de datos relacional, dashboard en tiempo real vía
-            Socket.io y consola SCADA de monitoreo construida en Electron.</p>
-          <div class="project-stack">
-            <span>React</span><span>Node.js</span><span>Express</span>
-            <span>Prisma</span><span>NFC / PC-SC</span><span>Socket.io</span><span>Electron</span>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-badge">Pasantía · Elegant Gift</span>
+              <span class="project-type">Full-Stack + Hardware</span>
+            </div>
+            <h3>Sistema de gestión para gimnasio con NFC</h3>
+            <p>Aplicación completa de gestión de membresías con control de acceso por tarjetas NFC.
+              Incluye backend con API REST, base de datos relacional, dashboard en tiempo real vía
+              Socket.io y consola SCADA de monitoreo construida en Electron.</p>
+            <div class="project-stack">
+              <span>React</span><span>Node.js</span><span>Express</span>
+              <span>Prisma</span><span>NFC / PC-SC</span><span>Socket.io</span><span>Electron</span>
+            </div>
           </div>
         </article>
 
         <article class="project-card" data-animate>
+          <div class="project-media">
+            <img src="img/proyectos/simulacion-brazo-pid.webp" alt="Simulación de Brazo Robótico 3 GDL en MATLAB">
+          </div>
           <div class="project-meta">
             <span class="project-type">IoT · Cloud</span>
           </div>
-          <h3>Sistema de monitoreo con ESP32 y Firebase</h3>
-          <p>Sensor embebido que publica datos en tiempo real a Firebase. Visualización en
-            dashboard web con actualización en vivo, pensado para entornos de control remoto.</p>
+          <h3>Brazo Robótico 3 GDL con PID y aplicación</h3>
+          <p>Impresión 3D, postprocesado, diseño de la PCB y circuito, desarrollo del programa
+            (aplicación en Matlab) para controlar el brazo robótico mediante Cinemática Directa
+             e Inversa. Las 3 articulaciones cuentan con PID.
+          </p>
           <div class="project-stack">
             <span>ESP32</span><span>Firebase</span><span>C++</span>
           </div>
         </article>
 
         <article class="project-card" data-animate>
+          <div class="project-media">
+            <img src="img/proyectos/dosificador-pollos.webp" alt="Dosificador de alimento para pollos">
+          </div>
           <div class="project-meta">
             <span class="project-type">Automatización · PLC</span>
           </div>
-          <h3>Dispensador automático para pollos</h3>
-          <p>Sistema de control programado en OpenPLC que dosifica alimento según horario y
-            peso, reduciendo desperdicio y trabajo manual en granja.</p>
+          <h3>Dosificador de alimento para pollos</h3>
+          <p>Sistema de control programado en OpenPLC que dosifica alimento mixto según 
+            la proporción de cada tipo de alimento, reduciendo desperdicio y 
+            trabajo manual en granja Permite recionar porciones y personaliar la
+             proporción adecuada según la necesidad.</p>
           <div class="project-stack">
-            <span>OpenPLC</span><span>Ladder</span><span>HMI</span>
+            <span>OpenPLC</span><span>Ladder</span><span>Arduino</span>
           </div>
         </article>
 
         <article class="project-card" data-animate>
+          <div class="project-media">
+            <img src="img/proyectos/circuito-incubadora.webp" alt="Circuito de incubadora automatizada para huevos">
+          </div>
           <div class="project-meta">
             <span class="project-type">Embebidos · Control</span>
           </div>
-          <h3>Incubadora automatizada para huevos</h3>
-          <p>Control de temperatura y humedad para incubación. El sistema de calentamiento tuvo
-            limitaciones reales — un aprendizaje que formó parte del proceso tanto como los
-            aciertos.</p>
+          <h3>Incubadora automatizada para huevos controlado por aplicación</h3>
+          <p>Control de temperatura y humedad para incubación de huevos de diferentes especies.
+            El sistema es programable y personalizable mediante la aplicación, se puede controlar
+             y programar la temperatura, humedad y rotación de los huevos, además de observar el
+             registro a lo largo de todo el proceso de incubación.
+            </p>
           <div class="project-stack">
             <span>Arduino</span><span>DHT22</span><span>PID</span>
           </div>
         </article>
 
         <article class="project-card" data-animate>
+          <div class="project-media">
+            <img src="img/proyectos/auto-velocista.webp" alt="Auto velocista seguidor de línea con pantalla OLED">
+          </div>
           <div class="project-meta">
             <span class="project-type">Robótica · Comunicación</span>
           </div>
-          <h3>Auto dual-ESP32 con control remoto</h3>
-          <p>Vehículo controlado inalámbricamente con dos ESP32 comunicados por Bluetooth Classic.
-            Diseño de PCB personalizado y chasis impreso en 3D.</p>
+          <h3>Auto velocista seguidor de línea con ESP32, programable con pantalla OLED</h3>
+          <p>Vehículo autónomo seguidor de línea controlado con PID, programable mediante
+            pantalla OLED, el programa permite calibrar los sensores, medir el tiempo del recorrido,
+            observar el funcionamiento del sensor en tiempo real y guardar configuraciones permanentes
+            en la memoria flash del ESP32.
+          </p>
           <div class="project-stack">
             <span>ESP32</span><span>Bluetooth Classic</span><span>PCB</span><span>3D Print</span>
           </div>
@@ -230,8 +259,10 @@
             <span class="project-type">Astronomía · Visualización</span>
           </div>
           <h3>Domo astronómico + shader OBS</h3>
-          <p>Proyección de cielo en cúpula con shader personalizado para OBS. Herramienta usada
-            en eventos del club para divulgación científica en formato inmersivo.</p>
+          <p>Proyección de cielo en domo con shader para OBS.
+            El Shader es específico para el sistema de domo con espejo semiesférico, permite proyectar
+            cualquier programa para permitir un mejor aprovechamiento del domo en divulgación científica.
+          </p>
           <div class="project-stack">
             <span>GLSL Shader</span><span>OBS</span><span>Geometría esférica</span>
           </div>
@@ -245,18 +276,18 @@
         <div class="mentions-grid">
           <div class="mention-item">
             <strong>Electroestimulador muscular (Arduino)</strong>
-            <p>Prototipo experimental. Sin validación biomédica formal — hecho para
-              entender los principios, no para uso clínico.</p>
+            <p>Prototipo experimental. Permite ajustar los niveles de intensidad de la estimulación
+              muscular mediante comandos de voz.</p>
           </div>
           <div class="mention-item">
             <strong>Commit Guardian</strong>
-            <p>Herramienta multi-agente para revisión de commits. Construida con
-              Google ADK y la API de Gemini.</p>
+            <p>Herramienta agente para revisión y generación de commits, crea un plan acorde al proyecto
+              con las diferentes etapas y tareas correspondientes. Desarrollado con Google ADK.</p>
           </div>
           <div class="mention-item">
             <strong>BCI / Interfaz cerebro-computadora</strong>
-            <p>Dirección futura en desarrollo activo. Bioseñales como interfaz —
-              trabajo en progreso, no un logro terminado.</p>
+            <p>Proyecto en desarrollo utilizando el Emotiv Epoc +, para el desarrollo de una 
+              interfaz cerebro computadora</p>
           </div>
         </div>
       </div>
@@ -265,22 +296,23 @@
       <div class="gallery-section">
         <h3 class="gallery-title">Galería de otros proyectos</h3>
         <div class="gallery-grid">
+
           <div class="gallery-item">
-            <div class="gallery-thumb gallery-thumb--placeholder"></div>
+            <div class="gallery-thumb">
+              <img src="img/proyectos/viga-bola.webp"
+                   alt="Sistema viga-bola con control PID" loading="lazy">
+            </div>
             <span>Viga-bola con control PID</span>
           </div>
+
           <div class="gallery-item">
-            <div class="gallery-thumb gallery-thumb--placeholder"></div>
-            <span>Robot 3 GDL (MATLAB)</span>
+            <div class="gallery-thumb">
+              <img src="img/proyectos/conversor-boost-completo.webp"
+                   alt="Convertidor Boost — vista del circuito completo" loading="lazy">
+            </div>
+            <span>Convertidor Boost</span>
           </div>
-          <div class="gallery-item">
-            <div class="gallery-thumb gallery-thumb--placeholder"></div>
-            <span>Convertidores Boost</span>
-          </div>
-          <div class="gallery-item">
-            <div class="gallery-thumb gallery-thumb--placeholder"></div>
-            <span>Auto velocista</span>
-          </div>
+
         </div>
       </div>
 
@@ -297,92 +329,119 @@
       <p class="section-intro">
         Iniciativa que ayudé a desarrollar dentro del Departamento de Física USFX: observaciones
         solares y nocturnas, procesamiento de imágenes y eventos de divulgación abiertos a la
-        comunidad. Las fotografías del cielo son propias — tomadas con celular y procesadas en
-        Lightroom, salvo Saturno, captado con la cámara astronómica Orion StarShoot 5MP del club
-        y procesado con PIPP, AutoStakkert y RegiStax.
+        comunidad.
+      </p>
+      <p class="section-intro">
+        Participamos en actividades nacionales, campamentos, encuentros, etc.
+        Las fotografías del cielo son propias — tomadas con celular, con telescopio o cámara astronómica, 
+        procesadas con Lightroom.
       </p>
 
       <div class="astro-stats">
-        <span class="astro-stat-inline">Asistentes en un evento <strong>+300</strong></span>
-        <span class="astro-stat-inline">Activos desde <strong>2023</strong></span>
+        <div class="astro-stat-inline">
+          <span class="astro-stat-label">Asistentes en un evento</span>
+          <strong>+300</strong>
+        </div>
+        <div class="astro-stat-inline">
+          <span class="astro-stat-label">Activos desde</span>
+          <strong>2023</strong>
+        </div>
       </div>
 
       <p class="astro-note">
-        ◈ &nbsp;Parte del equipo USFX de detección de asteroides, reconocido por la
+        ◈ &nbsp;Participación en la Campaña de Búsqueda de Asteroides, reconocido por la
         <strong>NASA</strong> y el Grupo Boliviano de Asteroides (ABASC).
       </p>
 
       <div class="lightbox-grid" id="astro-gallery" role="list" aria-label="Galería del club de astronomía">
 
         <div class="lb-thumb" role="listitem" tabindex="0"
+             data-src="img/astronomia/foto-kafy-observacion.webp"
+             data-caption="Sesión de observación nocturna del club de astronomía USFX. Toma de Fotografia lunar con programa especializado, telescopio motorizado y cámara astronómica."
+             data-label="Sesión de observación">
+          <img src="img/astronomia/foto-kafy-observacion.webp"
+               alt="Sesión de observación nocturna del club de astronomía USFX" loading="lazy">
+          <div class="lb-hover-label"><span>Sesión de observación</span></div>
+        </div>
+
+        <div class="lb-thumb" role="listitem" tabindex="0"
+             data-src="img/astronomia/foto-observatorio-equipo.webp"
+             data-caption="Equipo y telescopio del club de astronomía del Departamento de Física USFX"
+             data-label="Equipo del observatorio">
+          <img src="img/astronomia/foto-observatorio-equipo.webp"
+               alt="Equipo y telescopio del club de astronomía USFX" loading="lazy">
+          <div class="lb-hover-label"><span>Equipo del observatorio</span></div>
+        </div>
+
+        <div class="lb-thumb" role="listitem" tabindex="0"
              data-src="img/astronomia/foto-comunidad-campamento-astronomico-2023.webp"
-             data-caption="Comunidad de Chiracoro, Potosí, durante el campamento astronómico 2023. Actividad de divulgación organizada por el Departamento de Física USFX para acercar la astronomía a comunidades fuera de la ciudad."
+             data-caption="Comunidad de Chiracoro, Potosí, durante el campamento astronómico 2023. Actividad de divulgación organizada por el Departamento de Física USFX para acercar la astronomía a comunidades fuera de la ciudad, fomentar el turismo en la zona y facilitar las alianzas entre clubes de astronomía en Bolivia"
              data-label="Chiracoro, Potosí — 2023">
           <img src="img/astronomia/foto-comunidad-campamento-astronomico-2023.webp"
-               alt="Comunidad de Chiracoro en campamento astronómico 2023" loading="lazy">
+               alt="Comunidad de Chiracoro, Potosí, durante el campamento astronómico 2023" loading="lazy">
           <div class="lb-hover-label"><span>Chiracoro, Potosí — 2023</span></div>
         </div>
 
         <div class="lb-thumb" role="listitem" tabindex="0"
              data-src="img/astronomia/foto-potosi-campamento-astronomico-representantes-sucre.webp"
-             data-caption="Integrantes del Departamento de Física USFX en el campamento astronómico de Potosí, 2023. Representando a Sucre en este encuentro interuniversitario de astronomía."
+             data-caption="Representantes del Departamento de Física USFX en el campamento astronómico de Potosí, 2023. Representando a Sucre en este encuentro entre clubes de astronomía en Bolivia."
              data-label="Representantes USFX en Potosí">
           <img src="img/astronomia/foto-potosi-campamento-astronomico-representantes-sucre.webp"
-               alt="Representantes del Depto. de Física USFX en campamento de Potosí" loading="lazy">
+               alt="Integrantes del Departamento de Física USFX en el campamento astronómico de Potosí 2023" loading="lazy">
           <div class="lb-hover-label"><span>Representantes USFX en Potosí</span></div>
         </div>
 
         <div class="lb-thumb" role="listitem" tabindex="0"
              data-src="img/astronomia/foto-luna-inflable-ings.webp"
-             data-caption="Docentes del Departamento de Física USFX junto a la luna inflable del Club Galileo de Potosí, en la Feria de Física universitaria. La feria se realiza cada semestre y es abierta a la comunidad."
+             data-caption="Junto a Docentes e Integrantes del Departamento de Física USFX, en la Feria de Física universitaria."
              data-label="Feria de Física — luna inflable">
           <img src="img/astronomia/foto-luna-inflable-ings.webp"
-               alt="Docentes con luna inflable del Club Galileo de Potosí en la Feria de Física" loading="lazy">
+               alt="Docentes del Departamento de Física USFX con la luna inflable del Club Galileo de Potosí en la Feria de Física" loading="lazy">
           <div class="lb-hover-label"><span>Feria de Física — luna inflable</span></div>
         </div>
 
         <div class="lb-thumb" role="listitem" tabindex="0"
              data-src="img/astronomia/foto-brazo-via-lactea-by-kafy17.webp"
-             data-caption="Brazo de la Vía Láctea fotografiado desde Sucre con celular y procesado en Lightroom. Fotografía: kafy17."
+             data-caption="Brazo de la Vía Láctea fotografiado en Potosí con celular y procesado en Lightroom. Fotografía: kafy17."
              data-label="Vía Láctea — kafy17">
           <img src="img/astronomia/foto-brazo-via-lactea-by-kafy17.webp"
-               alt="Brazo de la Vía Láctea — fotografía de kafy17" loading="lazy">
+               alt="Brazo de la Vía Láctea fotografiado con celular desde Sucre y procesado en Lightroom por kafy17" loading="lazy">
           <div class="lb-hover-label"><span>Vía Láctea — kafy17</span></div>
         </div>
 
         <div class="lb-thumb" role="listitem" tabindex="0"
              data-src="img/astronomia/foto-nube-magallanes-by-kafy17.webp"
-             data-caption="Nubes de Magallanes — galaxias satélites de la Vía Láctea, visibles a simple vista desde el hemisferio sur. Fotografiadas con celular desde Sucre y procesadas en Lightroom. Fotografía: kafy17."
+             data-caption="Nubes de Magallanes — galaxias satélites de la Vía Láctea, visibles a simple vista desde el hemisferio sur. Fotografiadas con celular desde Potosi y procesadas en Lightroom. Fotografía: kafy17."
              data-label="Nubes de Magallanes — kafy17">
           <img src="img/astronomia/foto-nube-magallanes-by-kafy17.webp"
-               alt="Nubes de Magallanes — fotografía de kafy17" loading="lazy">
+               alt="Nubes de Magallanes fotografiadas con celular desde Sucre y procesadas en Lightroom por kafy17" loading="lazy">
           <div class="lb-hover-label"><span>Nubes de Magallanes — kafy17</span></div>
         </div>
 
         <div class="lb-thumb" role="listitem" tabindex="0"
              data-src="img/astronomia/foto-jupiter-by-kafy17.webp"
-             data-caption="Júpiter fotografiado desde Sucre con celular y procesado en Lightroom. Fotografía: kafy17."
+             data-caption="Júpiter y sus Satelites, fotografiado desde Sucre con celular y telescopio. Fotografía: kafy17."
              data-label="Júpiter — kafy17">
           <img src="img/astronomia/foto-jupiter-by-kafy17.webp"
-               alt="Júpiter — fotografía de kafy17" loading="lazy">
+               alt="Júpiter fotografiado con celular desde Sucre y procesado en Lightroom por kafy17" loading="lazy">
           <div class="lb-hover-label"><span>Júpiter — kafy17</span></div>
         </div>
 
         <div class="lb-thumb" role="listitem" tabindex="0"
              data-src="img/astronomia/foto-saturno-by-kafy17.webp"
-             data-caption="Saturno capturado con la cámara astronómica Orion StarShoot 5MP del club y procesado con PIPP, AutoStakkert y RegiStax. La única foto de la galería tomada con equipo especializado. Fotografía: kafy17."
+             data-caption="Saturno capturado con la cámara astronómica Orion StarShoot 5MP del club sinprocesar. Fotografía: kafy17."
              data-label="Saturno — kafy17">
           <img src="img/astronomia/foto-saturno-by-kafy17.webp"
-               alt="Saturno — fotografía de kafy17" loading="lazy">
+               alt="Saturno capturado con cámara astronómica Orion StarShoot 5MP y procesado con PIPP, AutoStakkert y RegiStax por kafy17" loading="lazy">
           <div class="lb-hover-label"><span>Saturno — kafy17</span></div>
         </div>
 
         <div class="lb-thumb" role="listitem" tabindex="0"
              data-src="img/astronomia/foto-venus-by-kafy17.webp"
-             data-caption="Venus en fase creciente, fotografiado con celular desde Sucre y procesado en Lightroom. Las fases de Venus — análogas a las lunares — son observables con telescopios de apertura moderada. Fotografía: kafy17."
+             data-caption="Venus en fase creciente, fotografiado con celular desde Sucre. Las fases de Venus — análogas a las lunares — son observables con telescopios de apertura moderada. Fotografía: kafy17."
              data-label="Venus — kafy17">
           <img src="img/astronomia/foto-venus-by-kafy17.webp"
-               alt="Venus — fotografía de kafy17" loading="lazy">
+               alt="Venus en fase creciente fotografiado con celular desde Sucre y procesado en Lightroom por kafy17" loading="lazy">
           <div class="lb-hover-label"><span>Venus — kafy17</span></div>
         </div>
 
@@ -395,13 +454,13 @@
     <div class="container">
       <div class="section-header">
         <div class="section-label">04 / Habilidades</div>
-        <h2>Stack técnico</h2>
+        <h2>Con qué trabajo</h2>
       </div>
 
       <div class="skills-grid">
 
         <div class="skill-group">
-          <h4>Embebidos &amp; Electrónica</h4>
+          <h3>Embebidos &amp; Electrónica</h3>
           <ul>
             <li>ESP32 / Arduino</li>
             <li>Diseño de PCB</li>
@@ -411,7 +470,7 @@
         </div>
 
         <div class="skill-group">
-          <h4>Automatización &amp; PLC</h4>
+          <h3>Automatización &amp; PLC</h3>
           <ul>
             <li>OpenPLC / Ladder</li>
             <li>Control PID</li>
@@ -421,7 +480,7 @@
         </div>
 
         <div class="skill-group">
-          <h4>Software &amp; Full-Stack</h4>
+          <h3>Software &amp; Full-Stack</h3>
           <ul>
             <li>Python · C++ · SQL</li>
             <li>React · Node.js · Express</li>
@@ -431,7 +490,7 @@
         </div>
 
         <div class="skill-group">
-          <h4>Cloud &amp; IA (en progreso)</h4>
+          <h3>Cloud &amp; IA (en progreso)</h3>
           <ul>
             <li>AWS Cloud Practitioner Essentials</li>
             <li>Google ADK · Gemini API</li>
@@ -447,15 +506,17 @@
         <h3 class="certs-title">Certificaciones</h3>
         <ul class="certs-list">
           <li>
+            <span class="cert-index"></span>
             <span class="cert-issuer">AWS</span>
-            <span class="cert-name">Cloud Practitioner Essentials</span>
-            <span class="cert-note">curso completado — examen oficial en septiembre 2026</span>
+            <span class="cert-name">Cloud Practitioner Essentials <span class="cert-note">(examen oficial: sept. 2026)</span></span>
           </li>
           <li>
+            <span class="cert-index"></span>
             <span class="cert-issuer">Google</span>
             <span class="cert-name">Build with AI Sucre 2026</span>
           </li>
           <li>
+            <span class="cert-index"></span>
             <span class="cert-issuer">Google</span>
             <span class="cert-name">AI Learning Lab</span>
           </li>
@@ -466,9 +527,9 @@
       <div class="languages-section">
         <h3 class="languages-title">Idiomas</h3>
         <ul class="languages-list">
-          <li><span class="lang-name">Español</span><span class="lang-level">Nativo</span></li>
-          <li><span class="lang-name">Inglés</span><span class="lang-level">B2 · facultad</span></li>
-          <li><span class="lang-name">Alemán</span><span class="lang-level">B2 · Goethe-Zertifikat</span></li>
+          <li><span class="lang-index"></span><span class="lang-name">Español</span><span class="lang-level">Nativo</span></li>
+          <li><span class="lang-index"></span><span class="lang-name">Inglés</span><span class="lang-level">B2</span></li>
+          <li><span class="lang-index"></span><span class="lang-name">Alemán</span><span class="lang-level">B2 · Goethe-Zertifikat</span></li>
         </ul>
       </div>
 
@@ -481,9 +542,16 @@
       <div class="section-header section-header--center">
         <div class="section-label">05 / Contacto</div>
         <h2>Hablemos</h2>
-        <p class="contact-intro">
-          Si nos cruzamos en el AWS Community Day Bolivia, o quieres hablar de hardware,
-          sistemas embebidos o astronomía, aquí me encuentras.
+      </div>
+
+      <div class="contact-intro">
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          Abierta a nuevas oportunidades
+        </div>
+        <p>
+          Ya sea para colaborar en proyectos de robótica, hablar de desarrollo, 
+          o simplemente compartir sobre astronomía. Mi bandeja de entrada siempre está abierta.
         </p>
       </div>
 
@@ -542,14 +610,16 @@
 
       <div class="cv-block">
         <p>¿Prefieres el formato tradicional?</p>
-        <a href="#" class="btn-cv" id="btn-cv-download">
-          Descargar CV
+        <a href="CV_Kafy_Guarachi_ES.docx" class="btn-cv" id="btn-cv-download" download>
+          Descargar CV (es)
           <span class="btn-arrow">↓</span>
         </a>
       </div>
 
     </div>
   </section>
+
+  </main>
 
   <!-- ─── Footer ────────────────────────────────────────────────────── -->
   <footer class="footer" role="contentinfo">
